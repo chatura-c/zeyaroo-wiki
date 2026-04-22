@@ -60,6 +60,7 @@
 
 - **Planning (active)**
   - [Issues](planning/issues.md)
+  - [Future Improvements](planning/future-improvements.md)
 
 - **Archive**
   - [Archived docs](archive/)
