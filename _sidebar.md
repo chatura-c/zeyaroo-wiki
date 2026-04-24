@@ -58,6 +58,9 @@
   - [B2 CORS Setup](guides/b2-cors.md)
   - [E2E Testing](guides/e2e-testing.md)
 
+- **API**
+  - [Admin Project Tracking](api/admin-project-tracking.md)
+
 - **Planning (active)**
   - [Issues](planning/issues.md)
   - [Future Improvements](planning/future-improvements.md)
