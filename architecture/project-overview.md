@@ -479,13 +479,17 @@ User (1) ─── (0..1) CreatorProfile
 
 ### 8.2 Technical TODOs in Code
 
-| Location | Issue |
-|----------|-------|
-| `backend/internal/handlers/escrow.go:492` | Missing project access verification |
-| `backend/internal/handlers/proposal.go:537` | Milestone update not implemented |
-| `backend/internal/handlers/share.go:744` | File serving not fully integrated |
-| `backend/internal/handlers/share.go:516` | Share media access verification incomplete |
-| `frontend/src/pages/ProjectDetail.tsx:1154` | Collaborators array hardcoded empty |
+Backend TODOs from the Feb 2026 audit have been re-verified (April 2026) and
+the comments removed; current behavior is summarized below. Frontend
+collaborators stub is still pending.
+
+| Location (Feb 2026) | Status (Apr 2026) | Notes |
+|---------------------|-------------------|-------|
+| `backend/internal/handlers/escrow.go:492` (project access verify) | ✅ Resolved | `GetProjectMilestones` calls `projectSvc.CanAccess`; per-milestone endpoints check `inquiry.ClientID/CreatorID`. |
+| `backend/internal/handlers/proposal.go:537` (milestone update) | ✅ Resolved (by design) | Milestone changes flow through `CreateVersion`; direct update is not a supported operation in the proposal versioning model. |
+| `backend/internal/handlers/share.go:744` (file serving) | ✅ Resolved | `ShareHandler.ServeMediaFile` in `share_public.go` serves files after verifying share access. |
+| `backend/internal/handlers/share.go:516` (share media access verify) | ✅ Resolved | `share_public.go` uses `svc.GetMediaForShare(shareID, mediaID)` which enforces the share-media link. |
+| `frontend/src/pages/ProjectDetail.tsx` (collaborators hardcoded `[]`) | ⏳ Pending | `TransferDialog` is still passed `collaborators={[]}`. Tracked as a follow-up. |
 
 ### 8.3 Security Considerations
 
