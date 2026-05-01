@@ -57,6 +57,7 @@
   - [Frontend Config](guides/frontend-config.md)
   - [B2 CORS Setup](guides/b2-cors.md)
   - [E2E Testing](guides/e2e-testing.md)
+  - [Tutorial Script — Alice & Bob](guides/tutorial-script-alice-and-bob.md)
 
 - **API**
   - [Admin Project Tracking](api/admin-project-tracking.md)
